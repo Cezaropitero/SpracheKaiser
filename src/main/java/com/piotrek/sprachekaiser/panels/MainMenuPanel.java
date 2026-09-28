@@ -78,7 +78,9 @@ public class MainMenuPanel extends JPanel {
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.setFocusPainted(false);
 
-        Dimension size = new Dimension(160, 30);
+        Dimension size = new Dimension(280, 52);
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
         button.setMaximumSize(size);
 
         return button;
