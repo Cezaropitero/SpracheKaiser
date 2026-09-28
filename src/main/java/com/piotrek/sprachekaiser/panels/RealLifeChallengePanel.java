@@ -30,7 +30,7 @@ public class RealLifeChallengePanel extends JPanel {
         );
 
         setBackground(
-                new Color(250, 248, 240)
+                new Color(240, 234, 218)
         );
 
 
@@ -83,7 +83,7 @@ public class RealLifeChallengePanel extends JPanel {
 
         add(helpPanel);
 
-    //    add(Box.createVerticalStrut(10));
+        add(Box.createVerticalStrut(10));
 
         add(nextChallengeButton);
 
@@ -101,18 +101,27 @@ public class RealLifeChallengePanel extends JPanel {
         );
 
         panel.setBackground(
-                new Color(250, 248, 240)
+                new Color(255, 253, 247)
         );
 
-        // CENTER THE WHOLE HELP BLOCK
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         Dimension helpSize = new Dimension(300, 100);
+
         panel.setPreferredSize(helpSize);
+        panel.setMinimumSize(helpSize);
         panel.setMaximumSize(helpSize);
 
-
-        // TITLE
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
 
         JLabel helpTitle = new JLabel("Useful phrases:");
 
@@ -120,21 +129,12 @@ public class RealLifeChallengePanel extends JPanel {
                 new Font("Arial", Font.BOLD, 12)
         );
 
-
-        // HELP
-
         helpLabel = new JLabel(
                 formatHelp(currentChallenge.getHelp())
         );
 
-
-        // TEXT INSIDE THE BLOCK → LEFT
-
         helpTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
         helpLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-
-        // ADD COMPONENTS
 
         panel.add(helpTitle);
         panel.add(Box.createVerticalStrut(3));
@@ -157,11 +157,35 @@ public class RealLifeChallengePanel extends JPanel {
 
         JButton button = new JButton(text);
 
-        button.setAlignmentX(
-                Component.CENTER_ALIGNMENT
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setFocusPainted(false);
+
+        Dimension size = new Dimension(280, 52);
+
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
+        button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(
+                new Color(255, 253, 247)
         );
 
-        button.setFocusPainted(false);
+        button.setForeground(
+                new Color(37, 37, 37)
+        );
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
