@@ -30,7 +30,7 @@ public class QuestionPanel extends JPanel {
         );
 
         setBackground(
-                new Color(250, 248, 240)
+                new Color(240, 234, 218)
         );
 
         currentQuestion = questionService.getRandomQuestion();
@@ -49,7 +49,7 @@ public class QuestionPanel extends JPanel {
 
         configureQuestionActions(backToMenuAction);
 
-        setQuestionButtonSizes();
+      //  setQuestionButtonSizes();
 
 
         // ADD COMPONENTS
@@ -81,11 +81,22 @@ public class QuestionPanel extends JPanel {
 
         JPanel panel = createPanel();
 
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
+
         // cały blok Help na środku
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // stała szerokość bloku
-        Dimension helpSize = new Dimension(300, 120);
+        Dimension helpSize = new Dimension(300, 140);
         panel.setPreferredSize(helpSize);
         panel.setMaximumSize(helpSize);
 
@@ -160,7 +171,7 @@ public class QuestionPanel extends JPanel {
         );
 
         panel.setBackground(
-                new Color(250, 248, 240)
+                new Color(255, 253, 247)
         );
 
         return panel;
@@ -171,11 +182,35 @@ public class QuestionPanel extends JPanel {
 
         JButton button = new JButton(text);
 
-        button.setAlignmentX(
-                Component.CENTER_ALIGNMENT
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setFocusPainted(false);
+
+        Dimension size = new Dimension(280, 52);
+
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
+        button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(
+                new Color(255, 253, 247)
         );
 
-        button.setFocusPainted(false);
+        button.setForeground(
+                new Color(37, 37, 37)
+        );
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
@@ -227,18 +262,6 @@ public class QuestionPanel extends JPanel {
         // QuestionPanel nie powinien sam zarządzać CardLayout z MyFrame.
     }
 
-
-    private void setQuestionButtonSizes() {
-
-        Dimension buttonSize =
-                nextQuestionButton.getPreferredSize();
-
-        helpButton.setMaximumSize(buttonSize);
-        nextQuestionButton.setMaximumSize(buttonSize);
-        backToMenuButton.setMaximumSize(buttonSize);
-    }
-
-
     private void addComponents() {
 
         add(Box.createVerticalStrut(70));
@@ -250,7 +273,7 @@ public class QuestionPanel extends JPanel {
         add(Box.createVerticalStrut(10));
         add(helpPanel);
 
-    //    add(Box.createVerticalStrut(20));
+        add(Box.createVerticalStrut(10));
         add(nextQuestionButton);
 
         add(Box.createVerticalStrut(10));
