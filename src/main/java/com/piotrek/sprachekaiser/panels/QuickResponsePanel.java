@@ -31,7 +31,7 @@ public class QuickResponsePanel extends JPanel {
         // CONFIGURE PANEL
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(250, 248, 240));
+        setBackground(new Color(240, 234, 218));
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         currentResponse = quickResponseService.getRandomResponse();
@@ -74,11 +74,13 @@ public class QuickResponsePanel extends JPanel {
 
         add(Box.createVerticalStrut(20));
         add(helpButton);
+        add(Box.createVerticalStrut(10));
         add(helpPanel);
 
         add(Box.createVerticalStrut(10));
 
         add(exampleButton);
+        add(Box.createVerticalStrut(10));
         add(examplePanel);
 
         add(Box.createVerticalStrut(10));
@@ -102,9 +104,26 @@ public class QuickResponsePanel extends JPanel {
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.setFocusPainted(false);
 
-        Dimension size = new Dimension(170, 32);
+        Dimension size = new Dimension(280, 52);
         button.setPreferredSize(size);
+        button.setMinimumSize(size);
         button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(new Color(255, 253, 247));
+        button.setForeground(new Color(37, 37, 37));
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
@@ -112,12 +131,36 @@ public class QuickResponsePanel extends JPanel {
     private JPanel createHiddenPanel(JLabel label) {
         JPanel panel = new JPanel();
 
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setOpaque(false);
+        panel.setLayout(
+                new BoxLayout(panel, BoxLayout.Y_AXIS)
+        );
+
+        panel.setBackground(
+                new Color(255, 253, 247)
+        );
+
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panel.add(Box.createVerticalStrut(10));
+        Dimension size = new Dimension(300, 90);
+        panel.setPreferredSize(size);
+        panel.setMinimumSize(size);
+        panel.setMaximumSize(size);
+
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
+
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+
         panel.add(label);
+
         panel.setVisible(false);
 
         return panel;
