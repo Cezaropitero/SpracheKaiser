@@ -1,4 +1,4 @@
-package org.example;
+package com.piotrek.sprachekaiser;
 
 import javax.swing.*;
 

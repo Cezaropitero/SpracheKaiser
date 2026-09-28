@@ -1,4 +1,4 @@
-package org.example.panels;
+package com.piotrek.sprachekaiser.panels;
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,7 +1,7 @@
-package org.example.panels;
+package com.piotrek.sprachekaiser.panels;
 
-import org.example.models.Question;
-import org.example.services.QuestionService;
+import com.piotrek.sprachekaiser.models.Question;
+import com.piotrek.sprachekaiser.services.QuestionService;
 
 import javax.swing.*;
 import java.awt.*;

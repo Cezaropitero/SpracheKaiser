@@ -1,7 +1,7 @@
-package org.example.services;
+package com.piotrek.sprachekaiser.services;
 
-import org.example.models.Challenge;
-import org.example.loader.ChallengeLoader;
+import com.piotrek.sprachekaiser.models.Challenge;
+import com.piotrek.sprachekaiser.loader.ChallengeLoader;
 
 import java.util.List;
 import java.util.Random;

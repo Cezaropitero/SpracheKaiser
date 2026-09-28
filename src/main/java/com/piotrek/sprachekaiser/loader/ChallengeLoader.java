@@ -1,4 +1,4 @@
-package com.piotrek.sprachekaiser;
+package com.piotrek.sprachekaiser.loader;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;

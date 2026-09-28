@@ -1,4 +1,4 @@
-package org.example.models;
+package com.piotrek.sprachekaiser.models;
 
 public class Challenge {
 

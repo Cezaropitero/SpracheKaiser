@@ -1,7 +1,7 @@
-package org.example.panels;
+package com.piotrek.sprachekaiser.panels;
 
-import org.example.models.QuickResponse;
-import org.example.services.QuickResponseService;
+import com.piotrek.sprachekaiser.models.QuickResponse;
+import com.piotrek.sprachekaiser.services.QuickResponseService;
 
 import javax.swing.*;
 import java.awt.*;

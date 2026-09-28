@@ -1,7 +1,7 @@
-package org.example.services;
+package com.piotrek.sprachekaiser.services;
 
-import org.example.models.QuickResponse;
-import org.example.loader.QuickResponseLoader;
+import com.piotrek.sprachekaiser.models.QuickResponse;
+import com.piotrek.sprachekaiser.loader.QuickResponseLoader;
 
 import java.util.List;
 import java.util.Random;
