@@ -8,6 +8,7 @@ import java.awt.*;
 
 public class RealLifeChallengePanel extends JPanel {
 
+    private JButton backToFilterButton;
     private JLabel challengeLabel;
     private ChallengeService challengeService = new ChallengeService();
     private JButton helpButton;
@@ -20,7 +21,7 @@ public class RealLifeChallengePanel extends JPanel {
     private JLabel helpLabel;
 
 
-    public RealLifeChallengePanel(Runnable backToMenuAction) {
+    public RealLifeChallengePanel(Runnable backToFilterAction,Runnable backToMenuAction) {
 
         // CONFIGURE PANEL
         currentChallenge = challengeService.getRandomChallenge();
@@ -56,6 +57,9 @@ public class RealLifeChallengePanel extends JPanel {
         nextChallengeButton =
                 createButton("Next Challenge");
 
+        backToFilterButton =
+                createButton("Back to Filters");
+
         backToMenuButton =
                 createButton("Back to Menu");
 
@@ -67,7 +71,10 @@ public class RealLifeChallengePanel extends JPanel {
 
         // CONFIGURE ACTIONS
 
-        configureActions(backToMenuAction);
+        configureActions(
+                backToFilterAction,
+                backToMenuAction
+        );
 
         // ADD COMPONENTS
 
@@ -86,6 +93,10 @@ public class RealLifeChallengePanel extends JPanel {
         add(Box.createVerticalStrut(10));
 
         add(nextChallengeButton);
+
+        add(Box.createVerticalStrut(10));
+
+        add(backToFilterButton);
 
         add(Box.createVerticalStrut(10));
 
@@ -192,12 +203,18 @@ public class RealLifeChallengePanel extends JPanel {
 
 
     private void configureActions(
+            Runnable backToFilterAction,
             Runnable backToMenuAction
     ) {
+
+        backToFilterButton.addActionListener(e ->
+                backToFilterAction.run()
+        );
 
         backToMenuButton.addActionListener(e ->
                 backToMenuAction.run()
         );
+
         helpButton.addActionListener(e -> {
 
             boolean isVisible = helpPanel.isVisible();
@@ -210,10 +227,10 @@ public class RealLifeChallengePanel extends JPanel {
                 helpButton.setText("Hide Help");
             }
         });
-        nextChallengeButton.addActionListener(e -> {
-            showRandomChallenge();
-        });
 
+        nextChallengeButton.addActionListener(e ->
+                showRandomChallenge()
+        );
     }
 
     private void showRandomChallenge() {

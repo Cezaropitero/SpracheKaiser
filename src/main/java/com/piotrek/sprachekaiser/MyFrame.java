@@ -1,9 +1,6 @@
 package com.piotrek.sprachekaiser;
 
-import com.piotrek.sprachekaiser.panels.MainMenuPanel;
-import com.piotrek.sprachekaiser.panels.QuestionPanel;
-import com.piotrek.sprachekaiser.panels.QuickResponsePanel;
-import com.piotrek.sprachekaiser.panels.RealLifeChallengePanel;
+import com.piotrek.sprachekaiser.panels.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +17,7 @@ public class MyFrame extends JFrame {
         JPanel mainMenuPanel = new MainMenuPanel(
                 () -> cardLayout.show(mainPanel, "QUESTION"),
                 () -> cardLayout.show(mainPanel, "QUICK_RESPONSE"),
-                () -> cardLayout.show(mainPanel, "CHALLENGE")
+                () -> cardLayout.show(mainPanel, "CHALLENGE_FILTER")
         );
 
         JPanel questionPanel = new QuestionPanel(
@@ -31,10 +28,19 @@ public class MyFrame extends JFrame {
                 () -> cardLayout.show(mainPanel, "MENU")
         );
 
+        JPanel realLifeChallengeFilterPanel =
+                new RealLifeChallengeFilterPanel(
+                        selectedTheme ->
+                                cardLayout.show(mainPanel, "CHALLENGE"),
+
+                        () ->
+                                cardLayout.show(mainPanel, "MENU")
+                );
+
         JPanel realLifeChallengePanel = new RealLifeChallengePanel(
+                () -> cardLayout.show(mainPanel, "CHALLENGE_FILTER"),
                 () -> cardLayout.show(mainPanel, "MENU")
         );
-
 
         // ADD PANELS
 
@@ -42,6 +48,7 @@ public class MyFrame extends JFrame {
         mainPanel.add(questionPanel, "QUESTION");
         mainPanel.add(quickResponsePanel, "QUICK_RESPONSE");
         mainPanel.add(realLifeChallengePanel, "CHALLENGE");
+        mainPanel.add(realLifeChallengeFilterPanel, "CHALLENGE_FILTER");
 
 
         // CONFIGURE FRAME
