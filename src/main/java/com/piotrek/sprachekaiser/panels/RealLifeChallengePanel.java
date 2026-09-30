@@ -1,6 +1,7 @@
 package com.piotrek.sprachekaiser.panels;
 
 import com.piotrek.sprachekaiser.models.Challenge;
+import com.piotrek.sprachekaiser.models.ChallengeFilter;
 import com.piotrek.sprachekaiser.services.ChallengeService;
 
 import javax.swing.*;
@@ -20,12 +21,12 @@ public class RealLifeChallengePanel extends JPanel {
     private Challenge currentChallenge;
     private JLabel helpLabel;
 
+    private ChallengeFilter currentFilter;
 
-    public RealLifeChallengePanel(Runnable backToFilterAction,Runnable backToMenuAction) {
 
-        // CONFIGURE PANEL
-        currentChallenge = challengeService.getRandomChallenge();
-
+    public RealLifeChallengePanel(Runnable backToFilterAction,
+                                  Runnable backToMenuAction)
+    {
         setLayout(
                 new BoxLayout(this, BoxLayout.Y_AXIS)
         );
@@ -36,12 +37,7 @@ public class RealLifeChallengePanel extends JPanel {
 
 
         // CREATE COMPONENTS
-
-        challengeLabel = new JLabel(
-                "<html><div style='width:350px; text-align:center;'>"
-                        + currentChallenge.getChallenge()
-                        + "</div></html>"
-        );
+        challengeLabel = new JLabel("");
 
         challengeLabel.setFont(
                 new Font("Arial", Font.BOLD, 22)
@@ -103,6 +99,14 @@ public class RealLifeChallengePanel extends JPanel {
         add(backToMenuButton);
     }
 
+
+    public void setFilter(ChallengeFilter filter) {
+        this.currentFilter = filter;
+        showRandomChallenge();
+    }
+
+
+
     private JPanel createHelpPanel() {
 
         JPanel panel = new JPanel();
@@ -139,10 +143,7 @@ public class RealLifeChallengePanel extends JPanel {
         helpTitle.setFont(
                 new Font("Arial", Font.BOLD, 12)
         );
-
-        helpLabel = new JLabel(
-                formatHelp(currentChallenge.getHelp())
-        );
+        helpLabel = new JLabel("");
 
         helpTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
         helpLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -235,7 +236,8 @@ public class RealLifeChallengePanel extends JPanel {
 
     private void showRandomChallenge() {
 
-        currentChallenge = challengeService.getRandomChallenge();
+        currentChallenge =
+                challengeService.getRandomChallenge(currentFilter);
 
         challengeLabel.setText(
                 "<html><div style='width:350px; text-align:center;'>"
@@ -247,7 +249,6 @@ public class RealLifeChallengePanel extends JPanel {
                 formatHelp(currentChallenge.getHelp())
         );
 
-        // Schowaj help przy nowym challenge
         helpPanel.setVisible(false);
         helpButton.setText("Get Help");
     }

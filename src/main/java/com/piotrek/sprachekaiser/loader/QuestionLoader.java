@@ -12,14 +12,18 @@ import java.util.List;
 public class QuestionLoader {
 
     public List<Question> loadQuestions() {
+        return loadQuestions("/questions.csv");
+    }
+
+    public List<Question> loadQuestions(String resourcePath) {
 
         List<Question> questions = new ArrayList<>();
 
         InputStream inputStream =
-                getClass().getResourceAsStream("/questions.csv");
+                getClass().getResourceAsStream(resourcePath);
 
         if (inputStream == null) {
-            throw new RuntimeException("questions.csv not found");
+            throw new RuntimeException(resourcePath + " not found");
         }
 
         try (Reader reader =
@@ -36,14 +40,17 @@ public class QuestionLoader {
                         record.get("German Question"),
                         record.get("English Meaning"),
                         record.get("German Help"),
-                        record.get("Level")
+                        record.get("Level"),
+                        record.get("Theme")
                 );
 
                 questions.add(question);
             }
 
         } catch (IOException e) {
-            throw new RuntimeException("Error reading questions.csv", e);
+            throw new RuntimeException(
+                    "Error reading " + resourcePath, e
+            );
         }
 
         return questions;

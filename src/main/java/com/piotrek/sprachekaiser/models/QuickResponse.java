@@ -6,17 +6,20 @@ public class QuickResponse {
     private final String help;
     private final String difficulty;
     private final String exampleAnswer;
+    private final String theme;
 
     public QuickResponse(
             String situation,
             String help,
             String difficulty,
-            String exampleAnswer
+            String exampleAnswer,
+            String theme
     ) {
         this.situation = situation;
         this.help = help;
         this.difficulty = difficulty;
         this.exampleAnswer = exampleAnswer;
+        this.theme = theme;
     }
 
     public String getSituation() {
@@ -33,5 +36,9 @@ public class QuickResponse {
 
     public String getExampleAnswer() {
         return exampleAnswer;
+    }
+
+    public String getTheme() {
+        return theme;
     }
 }

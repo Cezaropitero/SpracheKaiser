@@ -2,6 +2,7 @@ package com.piotrek.sprachekaiser.panels;
 
 import com.piotrek.sprachekaiser.models.Question;
 import com.piotrek.sprachekaiser.services.QuestionService;
+import com.piotrek.sprachekaiser.models.QuestionFilter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,12 @@ public class QuestionPanel extends JPanel {
 
     private QuestionService questionService = new QuestionService();
     private Question currentQuestion;
+    private QuestionFilter currentFilter;
     private JLabel questionLabel;
     private JLabel translationLabel;
     private JLabel helpLabel;
+    private JButton backToFilterButton;
+
 
     private JButton helpButton;
     private JButton nextQuestionButton;
@@ -21,7 +25,10 @@ public class QuestionPanel extends JPanel {
     private JPanel helpPanel;
 
 
-    public QuestionPanel(Runnable backToMenuAction) {
+    public QuestionPanel(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         // CONFIGURE QUESTION PANEL
 
@@ -42,12 +49,16 @@ public class QuestionPanel extends JPanel {
         helpPanel = createHelpPanel();
 
         nextQuestionButton = createButton("Next Question");
+        backToFilterButton = createButton("Back to Filters");
         backToMenuButton = createButton("Back to Menu");
 
 
         // CONFIGURE COMPONENTS
 
-        configureQuestionActions(backToMenuAction);
+        configureQuestionActions(
+                backToFilterAction,
+                backToMenuAction
+        );
 
       //  setQuestionButtonSizes();
 
@@ -57,6 +68,10 @@ public class QuestionPanel extends JPanel {
         addComponents();
     }
 
+    public void setFilter(QuestionFilter filter) {
+        this.currentFilter = filter;
+        showRandomQuestion();
+    }
 
     private JLabel createQuestionLabel() {
 
@@ -214,9 +229,32 @@ public class QuestionPanel extends JPanel {
 
         return button;
     }
+    private void showRandomQuestion() {
+
+        currentQuestion =
+                questionService.getRandomQuestion(currentFilter);
+
+        questionLabel.setText(
+                currentQuestion.getQuestion()
+        );
+
+        translationLabel.setText(
+                currentQuestion.getEnglishMeaning()
+        );
+
+        helpLabel.setText(
+                formatHelp(currentQuestion.getHelp())
+        );
+
+        helpPanel.setVisible(false);
+        helpButton.setText("Get Help");
+    }
 
 
-    private void configureQuestionActions(Runnable backToMenuAction) {
+    private void configureQuestionActions(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         helpButton.addActionListener(e -> {
 
@@ -233,29 +271,16 @@ public class QuestionPanel extends JPanel {
         });
 
 
-        nextQuestionButton.addActionListener(e -> {
-            currentQuestion = questionService.getRandomQuestion();
-
-            questionLabel.setText(
-                    currentQuestion.getQuestion()
-            );
-            translationLabel.setText(
-                    currentQuestion.getEnglishMeaning()
-            );
-
-            helpLabel.setText(
-                    formatHelp(currentQuestion.getHelp())
-            );
-
-            // Schowaj help
-            helpPanel.setVisible(false);
-
-            // Przywróć napis na przycisku
-            helpButton.setText("Get Help");
-        });
+        nextQuestionButton.addActionListener(e ->
+                showRandomQuestion()
+        );
 
         backToMenuButton.addActionListener(e ->
                 backToMenuAction.run()
+        );
+
+        backToFilterButton.addActionListener(e ->
+                backToFilterAction.run()
         );
 
         // Back to Menu zrobimy za chwilę.
@@ -275,6 +300,9 @@ public class QuestionPanel extends JPanel {
 
         add(Box.createVerticalStrut(10));
         add(nextQuestionButton);
+
+        add(Box.createVerticalStrut(10));
+        add(backToFilterButton);
 
         add(Box.createVerticalStrut(10));
         add(backToMenuButton);

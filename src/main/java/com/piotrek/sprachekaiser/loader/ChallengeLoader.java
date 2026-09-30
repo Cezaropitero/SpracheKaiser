@@ -1,8 +1,8 @@
 package com.piotrek.sprachekaiser.loader;
 
+import com.piotrek.sprachekaiser.models.Challenge;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import com.piotrek.sprachekaiser.models.Challenge;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,17 +12,21 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChallengeLoader
-{
+public class ChallengeLoader {
+
     public List<Challenge> loadChallenges() {
+        return loadChallenges("/challenges.csv");
+    }
+
+    public List<Challenge> loadChallenges(String resourcePath) {
 
         List<Challenge> challenges = new ArrayList<>();
 
         InputStream inputStream =
-                getClass().getResourceAsStream("/challenges.csv");
+                getClass().getResourceAsStream(resourcePath);
 
         if (inputStream == null) {
-            throw new RuntimeException("challenges.csv not found");
+            throw new RuntimeException(resourcePath + " not found");
         }
 
         try (
@@ -45,7 +49,7 @@ public class ChallengeLoader
                         record.get("Challenge"),
                         record.get("German Help"),
                         record.get("Theme"),
-                        record.get("Applicability"),
+                        record.get("Accessibility"),
                         record.get("Difficulty"),
                         record.get("Engagement")
                 );
@@ -54,10 +58,12 @@ public class ChallengeLoader
             }
 
         } catch (IOException e) {
-            throw new RuntimeException("Error reading challenges.csv", e);
+            throw new RuntimeException(
+                    "Error reading " + resourcePath,
+                    e
+            );
         }
 
         return challenges;
     }
-
 }

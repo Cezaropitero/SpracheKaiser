@@ -1,48 +1,42 @@
 package com.piotrek.sprachekaiser.panels;
 
-import com.piotrek.sprachekaiser.models.ChallengeFilter;
+import com.piotrek.sprachekaiser.models.QuickResponseFilter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.function.Consumer;
 
-public class RealLifeChallengeFilterPanel extends JPanel {
+public class QuickResponseFilterPanel extends JPanel {
 
     private JComboBox<String> themeComboBox;
-    private JComboBox<String> AccessibilityComboBox;
     private JComboBox<String> difficultyComboBox;
-    private JComboBox<String> engagementComboBox;
 
-    public RealLifeChallengeFilterPanel(
-            Consumer<ChallengeFilter> startChallengeAction,
+    public QuickResponseFilterPanel(
+            Consumer<QuickResponseFilter> startResponseAction,
             Runnable backToMenuAction
     ) {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(new Color(240, 234, 218));
 
-        JLabel titleLabel = new JLabel("Choose challenge filters");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        JLabel titleLabel =
+                new JLabel("Choose response filters");
+
+        titleLabel.setFont(
+                new Font("Arial", Font.BOLD, 22)
+        );
+
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
 
         String[] themes = {
                 "All themes",
-                "HOME",
-                "KITCHEN",
-                "IT",
-                "CITY",
-                "SPORT",
                 "SHOPPING",
-                "NATURE",
-                "SOCIAL",
+                "FOOD",
                 "TRAVEL",
-                "DAILY_LIFE"
-        };
-
-        String[] Accessibility = {
-                "All",
-                "LOW",
-                "MEDIUM",
-                "HIGH"
+                "SOCIAL",
+                "DAILY_LIFE",
+                "WORK"
         };
 
         String[] difficulties = {
@@ -52,86 +46,59 @@ public class RealLifeChallengeFilterPanel extends JPanel {
                 "HARD"
         };
 
-        String[] engagement = {
-                "All",
-                "LOW",
-                "MEDIUM",
-                "HIGH"
-        };
 
         themeComboBox = new JComboBox<>(themes);
-        AccessibilityComboBox = new JComboBox<>(Accessibility);
         difficultyComboBox = new JComboBox<>(difficulties);
-        engagementComboBox = new JComboBox<>(engagement);
 
-        themeComboBox.setMaximumSize(
-                new Dimension(280, 40)
-        );
-        themeComboBox.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JButton startButton = createButton("Start Challenge");
-        JButton backButton = createButton("Back to Menu");
+        JButton startButton =
+                createButton("Start Responses");
+
+        JButton backButton =
+                createButton("Back to Menu");
+
 
         startButton.addActionListener(e -> {
 
             String selectedTheme =
                     (String) themeComboBox.getSelectedItem();
 
-            String selectedPracticality =
-                    (String) AccessibilityComboBox.getSelectedItem();
-
             String selectedDifficulty =
                     (String) difficultyComboBox.getSelectedItem();
 
-            String selectedEngagement =
-                    (String) engagementComboBox.getSelectedItem();
+            QuickResponseFilter filter =
+                    new QuickResponseFilter(
+                            selectedTheme,
+                            selectedDifficulty
+                    );
 
-            ChallengeFilter filter = new ChallengeFilter(
-                    selectedTheme,
-                    selectedPracticality,
-                    selectedDifficulty,
-                    selectedEngagement
-            );
-
-            startChallengeAction.accept(filter);
+            startResponseAction.accept(filter);
         });
+
 
         backButton.addActionListener(e ->
                 backToMenuAction.run()
         );
 
-        add(Box.createVerticalStrut(40));
+
+        add(Box.createVerticalStrut(60));
         add(titleLabel);
 
-        add(Box.createVerticalStrut(25));
+        add(Box.createVerticalStrut(30));
 
         add(createFilterRow(
                 "Theme:",
                 themeComboBox
         ));
 
-        add(Box.createVerticalStrut(5));
-
-        add(createFilterRow(
-                "Accessibility:",
-                AccessibilityComboBox
-        ));
-
-        add(Box.createVerticalStrut(5));
+        add(Box.createVerticalStrut(8));
 
         add(createFilterRow(
                 "Difficulty:",
                 difficultyComboBox
         ));
 
-        add(Box.createVerticalStrut(5));
-
-        add(createFilterRow(
-                "Engagement:",
-                engagementComboBox
-        ));
-
-        add(Box.createVerticalStrut(20));
+        add(Box.createVerticalStrut(30));
 
         add(startButton);
 
@@ -139,6 +106,8 @@ public class RealLifeChallengeFilterPanel extends JPanel {
 
         add(backButton);
     }
+
+
     private JPanel createFilterRow(
             String labelText,
             JComboBox<String> comboBox
@@ -171,6 +140,8 @@ public class RealLifeChallengeFilterPanel extends JPanel {
 
         return row;
     }
+
+
     private JButton createButton(String text) {
 
         JButton button = new JButton(text);
