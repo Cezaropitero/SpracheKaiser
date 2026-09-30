@@ -2,6 +2,7 @@ package com.piotrek.sprachekaiser.panels;
 
 import com.piotrek.sprachekaiser.models.Question;
 import com.piotrek.sprachekaiser.services.QuestionService;
+import com.piotrek.sprachekaiser.models.QuestionFilter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,12 @@ public class QuestionPanel extends JPanel {
 
     private QuestionService questionService = new QuestionService();
     private Question currentQuestion;
+    private QuestionFilter currentFilter;
     private JLabel questionLabel;
     private JLabel translationLabel;
     private JLabel helpLabel;
+    private JButton backToFilterButton;
+
 
     private JButton helpButton;
     private JButton nextQuestionButton;
@@ -21,7 +25,10 @@ public class QuestionPanel extends JPanel {
     private JPanel helpPanel;
 
 
-    public QuestionPanel(Runnable backToMenuAction) {
+    public QuestionPanel(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         // CONFIGURE QUESTION PANEL
 
@@ -30,7 +37,7 @@ public class QuestionPanel extends JPanel {
         );
 
         setBackground(
-                new Color(250, 248, 240)
+                new Color(240, 234, 218)
         );
 
         currentQuestion = questionService.getRandomQuestion();
@@ -42,14 +49,18 @@ public class QuestionPanel extends JPanel {
         helpPanel = createHelpPanel();
 
         nextQuestionButton = createButton("Next Question");
+        backToFilterButton = createButton("Back to Filters");
         backToMenuButton = createButton("Back to Menu");
 
 
         // CONFIGURE COMPONENTS
 
-        configureQuestionActions(backToMenuAction);
+        configureQuestionActions(
+                backToFilterAction,
+                backToMenuAction
+        );
 
-        setQuestionButtonSizes();
+      //  setQuestionButtonSizes();
 
 
         // ADD COMPONENTS
@@ -57,6 +68,10 @@ public class QuestionPanel extends JPanel {
         addComponents();
     }
 
+    public void setFilter(QuestionFilter filter) {
+        this.currentFilter = filter;
+        showRandomQuestion();
+    }
 
     private JLabel createQuestionLabel() {
 
@@ -81,11 +96,22 @@ public class QuestionPanel extends JPanel {
 
         JPanel panel = createPanel();
 
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
+
         // cały blok Help na środku
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // stała szerokość bloku
-        Dimension helpSize = new Dimension(300, 120);
+        Dimension helpSize = new Dimension(300, 140);
         panel.setPreferredSize(helpSize);
         panel.setMaximumSize(helpSize);
 
@@ -160,7 +186,7 @@ public class QuestionPanel extends JPanel {
         );
 
         panel.setBackground(
-                new Color(250, 248, 240)
+                new Color(255, 253, 247)
         );
 
         return panel;
@@ -171,17 +197,64 @@ public class QuestionPanel extends JPanel {
 
         JButton button = new JButton(text);
 
-        button.setAlignmentX(
-                Component.CENTER_ALIGNMENT
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setFocusPainted(false);
+
+        Dimension size = new Dimension(280, 52);
+
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
+        button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(
+                new Color(255, 253, 247)
         );
 
-        button.setFocusPainted(false);
+        button.setForeground(
+                new Color(37, 37, 37)
+        );
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
+    private void showRandomQuestion() {
+
+        currentQuestion =
+                questionService.getRandomQuestion(currentFilter);
+
+        questionLabel.setText(
+                currentQuestion.getQuestion()
+        );
+
+        translationLabel.setText(
+                currentQuestion.getEnglishMeaning()
+        );
+
+        helpLabel.setText(
+                formatHelp(currentQuestion.getHelp())
+        );
+
+        helpPanel.setVisible(false);
+        helpButton.setText("Get Help");
+    }
 
 
-    private void configureQuestionActions(Runnable backToMenuAction) {
+    private void configureQuestionActions(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         helpButton.addActionListener(e -> {
 
@@ -198,46 +271,21 @@ public class QuestionPanel extends JPanel {
         });
 
 
-        nextQuestionButton.addActionListener(e -> {
-            currentQuestion = questionService.getRandomQuestion();
-
-            questionLabel.setText(
-                    currentQuestion.getQuestion()
-            );
-            translationLabel.setText(
-                    currentQuestion.getEnglishMeaning()
-            );
-
-            helpLabel.setText(
-                    formatHelp(currentQuestion.getHelp())
-            );
-
-            // Schowaj help
-            helpPanel.setVisible(false);
-
-            // Przywróć napis na przycisku
-            helpButton.setText("Get Help");
-        });
+        nextQuestionButton.addActionListener(e ->
+                showRandomQuestion()
+        );
 
         backToMenuButton.addActionListener(e ->
                 backToMenuAction.run()
         );
 
+        backToFilterButton.addActionListener(e ->
+                backToFilterAction.run()
+        );
+
         // Back to Menu zrobimy za chwilę.
         // QuestionPanel nie powinien sam zarządzać CardLayout z MyFrame.
     }
-
-
-    private void setQuestionButtonSizes() {
-
-        Dimension buttonSize =
-                nextQuestionButton.getPreferredSize();
-
-        helpButton.setMaximumSize(buttonSize);
-        nextQuestionButton.setMaximumSize(buttonSize);
-        backToMenuButton.setMaximumSize(buttonSize);
-    }
-
 
     private void addComponents() {
 
@@ -250,8 +298,11 @@ public class QuestionPanel extends JPanel {
         add(Box.createVerticalStrut(10));
         add(helpPanel);
 
-    //    add(Box.createVerticalStrut(20));
+        add(Box.createVerticalStrut(10));
         add(nextQuestionButton);
+
+        add(Box.createVerticalStrut(10));
+        add(backToFilterButton);
 
         add(Box.createVerticalStrut(10));
         add(backToMenuButton);

@@ -12,14 +12,18 @@ import java.util.List;
 public class QuickResponseLoader {
 
     public List<QuickResponse> loadResponses() {
+        return loadResponses("/QuickResponse.csv");
+    }
+
+    public List<QuickResponse> loadResponses(String resourcePath) {
 
         List<QuickResponse> responses = new ArrayList<>();
 
         InputStream inputStream =
-                getClass().getResourceAsStream("/QuickResponse.csv");
+                getClass().getResourceAsStream(resourcePath);
 
         if (inputStream == null) {
-            throw new RuntimeException("QuickResponse.csv not found");
+            throw new RuntimeException(resourcePath + " not found");
         }
 
         try (Reader reader =
@@ -36,7 +40,8 @@ public class QuickResponseLoader {
                         record.get("situation"),
                         record.get("help"),
                         record.get("difficulty"),
-                        record.get("exampleAnswer")
+                        record.get("exampleAnswer"),
+                        record.get("Theme")
                 );
 
                 responses.add(response);
@@ -44,7 +49,7 @@ public class QuickResponseLoader {
 
         } catch (IOException e) {
             throw new RuntimeException(
-                    "Error reading quick_responses.csv", e
+                    "Error reading " + resourcePath, e
             );
         }
 

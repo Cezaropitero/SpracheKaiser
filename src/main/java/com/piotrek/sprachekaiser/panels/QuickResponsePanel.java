@@ -5,6 +5,7 @@ import com.piotrek.sprachekaiser.services.QuickResponseService;
 
 import javax.swing.*;
 import java.awt.*;
+import com.piotrek.sprachekaiser.models.QuickResponseFilter;
 
 public class QuickResponsePanel extends JPanel {
 
@@ -12,26 +13,33 @@ public class QuickResponsePanel extends JPanel {
             new QuickResponseService();
 
     private QuickResponse currentResponse;
+    private QuickResponseFilter currentFilter;
+
 
     private JLabel situationLabel;
     private JLabel difficultyLabel;
     private JLabel helpLabel;
     private JLabel exampleLabel;
 
+
     private JButton helpButton;
     private JButton exampleButton;
     private JButton nextResponseButton;
+    private JButton backToFilterButton;
     private JButton backToMenuButton;
 
     private JPanel helpPanel;
     private JPanel examplePanel;
 
-    public QuickResponsePanel(Runnable backToMenuAction) {
+    public QuickResponsePanel(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         // CONFIGURE PANEL
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(250, 248, 240));
+        setBackground(new Color(240, 234, 218));
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         currentResponse = quickResponseService.getRandomResponse();
@@ -50,6 +58,7 @@ public class QuickResponsePanel extends JPanel {
         helpButton = createButton("Get Help");
         exampleButton = createButton("Show Example");
         nextResponseButton = createButton("Next Response");
+        backToFilterButton = createButton("Back to Filters");
         backToMenuButton = createButton("Back to Menu");
 
         helpLabel = createLabel(
@@ -64,7 +73,10 @@ public class QuickResponsePanel extends JPanel {
 
         // CONFIGURE ACTIONS
 
-        configureActions(backToMenuAction);
+        configureActions(
+                backToFilterAction,
+                backToMenuAction
+        );
 
         // ADD COMPONENTS
 
@@ -74,11 +86,13 @@ public class QuickResponsePanel extends JPanel {
 
         add(Box.createVerticalStrut(20));
         add(helpButton);
+        add(Box.createVerticalStrut(10));
         add(helpPanel);
 
         add(Box.createVerticalStrut(10));
 
         add(exampleButton);
+        add(Box.createVerticalStrut(10));
         add(examplePanel);
 
         add(Box.createVerticalStrut(10));
@@ -87,7 +101,15 @@ public class QuickResponsePanel extends JPanel {
 
         add(Box.createVerticalStrut(10));
 
+        add(backToFilterButton);
+
+        add(Box.createVerticalStrut(10));
+
         add(backToMenuButton);
+    }
+    public void setFilter(QuickResponseFilter filter) {
+        this.currentFilter = filter;
+        showNextResponse();
     }
 
     private JLabel createLabel(String text) {
@@ -102,9 +124,26 @@ public class QuickResponsePanel extends JPanel {
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.setFocusPainted(false);
 
-        Dimension size = new Dimension(170, 32);
+        Dimension size = new Dimension(280, 48);
         button.setPreferredSize(size);
+        button.setMinimumSize(size);
         button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(new Color(255, 253, 247));
+        button.setForeground(new Color(37, 37, 37));
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
@@ -112,12 +151,36 @@ public class QuickResponsePanel extends JPanel {
     private JPanel createHiddenPanel(JLabel label) {
         JPanel panel = new JPanel();
 
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setOpaque(false);
+        panel.setLayout(
+                new BoxLayout(panel, BoxLayout.Y_AXIS)
+        );
+
+        panel.setBackground(
+                new Color(255, 253, 247)
+        );
+
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panel.add(Box.createVerticalStrut(10));
+        Dimension size = new Dimension(300, 90);
+        panel.setPreferredSize(size);
+        panel.setMinimumSize(size);
+        panel.setMaximumSize(size);
+
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
+
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+
         panel.add(label);
+
         panel.setVisible(false);
 
         return panel;
@@ -129,37 +192,69 @@ public class QuickResponsePanel extends JPanel {
                 + "</div></html>";
     }
 
-    private void configureActions(Runnable backToMenuAction) {
+    private void configureActions(
+            Runnable backToFilterAction,
+            Runnable backToMenuAction
+    ) {
 
         helpButton.addActionListener(e -> {
+
             boolean showHelp = !helpPanel.isVisible();
 
+            // pokaż / schowaj Help
             helpPanel.setVisible(showHelp);
-            helpButton.setText(showHelp ? "Hide Help" : "Get Help");
+            helpButton.setText(
+                    showHelp ? "Hide Help" : "Get Help"
+            );
+
+            // jeśli otwieramy Help, zamknij Example
+            if (showHelp) {
+                examplePanel.setVisible(false);
+                exampleButton.setText("Show Example");
+            }
 
             revalidate();
             repaint();
         });
 
+
         exampleButton.addActionListener(e -> {
+
             boolean showExample = !examplePanel.isVisible();
 
+            // pokaż / schowaj Example
             examplePanel.setVisible(showExample);
             exampleButton.setText(
                     showExample ? "Hide Example" : "Show Example"
             );
 
+            // jeśli otwieramy Example, zamknij Help
+            if (showExample) {
+                helpPanel.setVisible(false);
+                helpButton.setText("Get Help");
+            }
+
             revalidate();
             repaint();
         });
 
-        nextResponseButton.addActionListener(e -> showNextResponse());
 
-        backToMenuButton.addActionListener(e -> backToMenuAction.run());
+        nextResponseButton.addActionListener(e ->
+                showNextResponse()
+        );
+
+        backToFilterButton.addActionListener(e ->
+                backToFilterAction.run()
+        );
+
+        backToMenuButton.addActionListener(e ->
+                backToMenuAction.run()
+        );
     }
 
     private void showNextResponse() {
-        currentResponse = quickResponseService.getRandomResponse();
+        currentResponse =
+                quickResponseService.getRandomResponse(currentFilter);
 
         situationLabel.setText(
                 formatText(currentResponse.getSituation())

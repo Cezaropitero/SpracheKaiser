@@ -12,12 +12,14 @@ class QuestionTest {
                 "Wie heißt du?",
                 "What is your name?",
                 "Ich heiße Piotrek.",
-                "A1"
+                "A1",
+                "Social"
         );
 
         assertEquals("Wie heißt du?", question.getQuestion());
         assertEquals("What is your name?", question.getEnglishMeaning());
         assertEquals("Ich heiße Piotrek.", question.getHelp());
         assertEquals("A1", question.getLevel());
+        assertEquals("Social", question.getTheme());
     }
 }

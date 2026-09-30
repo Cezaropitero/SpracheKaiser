@@ -12,12 +12,14 @@ class QuickResponseTest {
                 "Someone thanks you",
                 "Use a polite response",
                 "A1",
-                "Bitte schön!"
+                "Bitte schön!",
+                "Social"
         );
 
         assertEquals("Someone thanks you", response.getSituation());
         assertEquals("Use a polite response", response.getHelp());
         assertEquals("A1", response.getDifficulty());
         assertEquals("Bitte schön!", response.getExampleAnswer());
+        assertEquals("Social", response.getTheme());
     }
 }

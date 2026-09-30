@@ -20,7 +20,7 @@ class ChallengeTest {
         assertEquals("Introduce yourself", challenge.getChallenge());
         assertEquals("Ich heiße Piotrek.", challenge.getHelp());
         assertEquals("Personal information", challenge.getTheme());
-        assertEquals("Anywhere", challenge.getApplicability());
+        assertEquals("Anywhere", challenge.getAccessibility());
         assertEquals("A1", challenge.getDifficulty());
         assertEquals("Speaking", challenge.getEngagement());
     }

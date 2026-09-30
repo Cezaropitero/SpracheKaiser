@@ -1,0 +1,63 @@
+Challenge,German Help,Theme,Accessibility,Difficulty,Engagement
+Turn on a light and say out loud what you are doing.,Ich mache das Licht an.,HOME,HIGH,EASY,LOW
+"Turn off a light, open a door, and close it while describing each action.",Ich mache das Licht aus. Ich öffne die Tür. Ich schließe die Tür.,HOME,HIGH,EASY,LOW
+Choose five objects in your room and name them.,Das ist ein Tisch. Das ist ein Stuhl. Das ist eine Lampe.,HOME,HIGH,EASY,LOW
+Describe your room in five sentences.,In meinem Zimmer gibt es ... / Neben dem Bett steht ... / An der Wand hängt ...,HOME,HIGH,MEDIUM,MEDIUM
+Choose one object in your room and describe it for 30 seconds.,Es ist ... / Es steht auf ... / Ich benutze es zum ...,HOME,HIGH,MEDIUM,MEDIUM
+Walk through your home and describe what you are doing for one minute.,Ich gehe durch meine Wohnung. Jetzt gehe ich in ... / Ich sehe ... / Ich mache ...,HOME,HIGH,HARD,HIGH
+Open the fridge and name five things you can see.,Im Kühlschrank sehe ich ... / Da ist ...,KITCHEN,HIGH,EASY,LOW
+Pour water into a glass and describe the action.,Ich gieße Wasser in ein Glas.,KITCHEN,HIGH,EASY,LOW
+Prepare a simple drink and describe three steps.,Zuerst ... Dann ... Zum Schluss ...,KITCHEN,HIGH,MEDIUM,MEDIUM
+Choose three kitchen objects and explain what each one is used for.,Das ist ein ... / Man benutzt es zum ...,KITCHEN,HIGH,MEDIUM,MEDIUM
+Make a simple snack while describing the whole process.,Zuerst nehme ich ... Dann schneide/mische ich ... Zum Schluss ...,KITCHEN,MEDIUM,HARD,HIGH
+Look inside a cupboard and create a short imaginary recipe from what you find.,Ich würde ... machen. Dafür brauche ich ... Zuerst ...,KITCHEN,HIGH,HARD,MEDIUM
+Create a new file and then delete it while describing both actions.,Ich erstelle eine neue Datei. Jetzt lösche ich die Datei.,IT,HIGH,EASY,LOW
+Create a new folder and move a file into it.,Ich erstelle einen neuen Ordner. Ich verschiebe die Datei in den Ordner.,IT,HIGH,EASY,LOW
+Open your IDE and describe three things you can see on the screen.,Ich sehe ... / Links ist ... / Rechts ist ... / Hier ist mein Code.,IT,HIGH,EASY,LOW
+"Make a simple error in your code, find it, and fix it.",Es gibt einen Fehler im Code. Ich habe den Fehler gefunden. Ich behebe den Fehler. Jetzt funktioniert das Programm.,IT,MEDIUM,MEDIUM,MEDIUM
+Choose one method in your code and explain what it does.,Diese Methode macht ... / Sie bekommt ... / Sie gibt ... zurück.,IT,HIGH,MEDIUM,MEDIUM
+Debug a real problem and narrate your thinking for two minutes.,"Ich habe erwartet, dass ... / Aber ... / Ich überprüfe ... / Ich habe den Fehler gefunden.",IT,MEDIUM,HARD,HIGH
+Refactor a small piece of code and explain why your version is better.,"Ich ändere diesen Code, weil ... / Jetzt ist der Code lesbarer/einfacher.",IT,MEDIUM,HARD,HIGH
+Use Git to check the repository status and explain what has changed.,Ich überprüfe den Git-Status. Diese Datei wurde geändert. Diese Datei ist neu.,IT,HIGH,MEDIUM,LOW
+Look out of a window and name five things you can see outside.,"Ich sehe ein Auto, eine Straße, ein Gebäude ...",CITY,HIGH,EASY,LOW
+Take a short walk and name ten objects around you.,Ich sehe ... / Dort ist ... / Neben mir ist ...,CITY,MEDIUM,EASY,MEDIUM
+"At a bus or tram stop, describe what is happening around you.",Der Bus kommt. Menschen warten. Jemand steigt ein/aus.,CITY,LOW,MEDIUM,MEDIUM
+Choose one building and describe it in detail.,Das Gebäude ist ... / Es befindet sich ... / Daneben ist ...,CITY,MEDIUM,MEDIUM,MEDIUM
+Walk for five minutes and narrate your route.,Ich gehe geradeaus. Dann biege ich links/rechts ab. Ich gehe an ... vorbei.,CITY,LOW,HARD,HIGH
+Imagine giving directions from your current location to a nearby place.,Geh geradeaus. Bieg links/rechts ab. Dann siehst du ...,CITY,MEDIUM,HARD,MEDIUM
+Pick up a ball or another sports object and name three actions you can do with it.,Ich kann den Ball werfen/fangen/prellen.,SPORT,MEDIUM,EASY,LOW
+Bounce a ball seven times and count each bounce out loud.,"Eins, zwei, drei, vier, fünf, sechs, sieben.",SPORT,MEDIUM,EASY,LOW
+Do five simple exercises and describe each movement.,Ich hebe meine Arme. Ich beuge meine Knie. Ich springe.,SPORT,HIGH,MEDIUM,MEDIUM
+Describe how to perform one exercise correctly.,"Zuerst stellst du dich ... / Dann ... / Achte darauf, dass ...",SPORT,HIGH,MEDIUM,MEDIUM
+Talk for one minute about a sport you enjoy.,"Mein Lieblingssport ist ... / Ich mag ihn, weil ... / Normalerweise ...",SPORT,HIGH,HARD,MEDIUM
+Create a 5-minute mini workout and explain the whole routine before doing it.,Zuerst mache ich ... / Danach ... / Zum Schluss ...,SPORT,HIGH,HARD,HIGH
+Choose one product at home and pretend you are buying it.,Das ist ... / Es kostet ungefähr ... / Ich möchte es kaufen.,SHOPPING,HIGH,EASY,LOW
+Look at three products and name their basic characteristics.,Es ist groß/klein/rot ... / Die Packung enthält ...,SHOPPING,HIGH,EASY,LOW
+Compare two products and decide which one you would buy.,"Dieses Produkt ist ... als ... / Ich würde ... kaufen, weil ...",SHOPPING,HIGH,MEDIUM,MEDIUM
+Create a short shopping list and say why you need each item.,"Ich brauche ... , weil ...",SHOPPING,HIGH,MEDIUM,LOW
+"In a shop, silently describe five products you see.",Ich sehe ... / Es kostet ... / Es ist ...,SHOPPING,LOW,MEDIUM,MEDIUM
+Act out a full customer-and-shop-assistant conversation by yourself.,Guten Tag. Ich suche ... / Wie viel kostet das? / Ich nehme es. Danke.,SHOPPING,HIGH,HARD,HIGH
+Look at a plant and name three visible parts.,Das ist ein Blatt/ein Stängel/eine Blüte.,NATURE,MEDIUM,EASY,LOW
+"Go outside and find something green, something small, and something moving.",Ich habe etwas Grünes gefunden. Es ist ...,NATURE,LOW,EASY,MEDIUM
+Describe the weather in three sentences.,Heute ist es ... / Der Himmel ist ... / Es ist windig/regnerisch.,NATURE,HIGH,EASY,LOW
+Choose one natural object and describe it for 30 seconds.,Es ist ... / Es fühlt sich ... an / Es liegt ...,NATURE,MEDIUM,MEDIUM,MEDIUM
+Take a short walk and describe changes in the environment around you.,Ich höre ... / Ich sehe ... / Das Licht wird ... / Es ist wärmer/kälter.,NATURE,LOW,HARD,HIGH
+Explain how the weather affects what you want to do today.,"Weil das Wetter ... ist, möchte ich ... / Deshalb ...",NATURE,HIGH,HARD,MEDIUM
+Say out loud how you feel right now.,"Ich fühle mich ... , weil ...",SOCIAL,HIGH,EASY,LOW
+Describe one person you know in three sentences.,Er/Sie ist ... / Er/Sie hat ... / Er/Sie mag ...,SOCIAL,HIGH,EASY,LOW
+Record a 30-second voice message about your day.,Heute habe ich ... / Danach ... / Jetzt ...,SOCIAL,HIGH,MEDIUM,MEDIUM
+Explain what you would like to do with a friend this weekend.,"Am Wochenende möchte ich ... / Wir könnten ... / Ich möchte dorthin, weil ...",SOCIAL,HIGH,MEDIUM,MEDIUM
+Tell a one-minute story about something funny or surprising that happened to you.,Zuerst ... / Plötzlich ... / Dann ... / Am Ende ...,SOCIAL,HIGH,HARD,HIGH
+Pretend you disagree with someone and explain your opinion calmly.,"Ich sehe das anders, weil ... / Einerseits ... andererseits ...",SOCIAL,HIGH,HARD,HIGH
+Pack three objects into a bag and name each one.,"Ich packe ... ein, weil ich es brauche.",TRAVEL,HIGH,EASY,LOW
+Choose a place you would like to visit and say three facts about it.,"Ich möchte ... besuchen. Dort kann man ... / Ich möchte dorthin, weil ...",TRAVEL,HIGH,MEDIUM,LOW
+Pretend you are checking into a hotel.,Guten Tag. Ich habe eine Reservierung. / Ist Frühstück inklusive? / Wo ist ...?,TRAVEL,HIGH,MEDIUM,MEDIUM
+Plan a one-day trip and explain your schedule.,Um ... Uhr ... / Danach fahre/gehe ich ... / Am Nachmittag ...,TRAVEL,HIGH,HARD,MEDIUM
+Pretend your train or flight has been cancelled and explain what you would do next.,Mein Zug/Flug wurde abgesagt. Zuerst würde ich ... / Dann ...,TRAVEL,HIGH,HARD,HIGH
+Give a two-minute spoken review of a place you have visited.,Ich war in ... / Mir hat ... gefallen. / Nicht so gut fand ich ... / Ich würde ... empfehlen.,TRAVEL,HIGH,HARD,HIGH
+Look at the time and say what you are doing right now.,Es ist ... Uhr. Gerade ... ich. Vorher habe ich ... Danach werde ich ...,DAILY_LIFE,HIGH,EASY,LOW
+Choose one object you use every day and explain its purpose.,Ich benutze das jeden Tag zum ...,DAILY_LIFE,HIGH,EASY,LOW
+Do one small household task and describe each step.,Zuerst ... / Dann ... / Danach ... / Fertig!,DAILY_LIFE,HIGH,MEDIUM,MEDIUM
+Describe your morning routine in six sentences.,Morgens stehe ich ... auf. Dann ... / Danach ...,DAILY_LIFE,HIGH,MEDIUM,MEDIUM
+Explain one decision you made today and why you made it.,"Ich musste mich zwischen ... und ... entscheiden. Ich habe ... gewählt, weil ...",DAILY_LIFE,HIGH,HARD,MEDIUM
+Speak for two minutes about your day without stopping.,"Heute ... / Danach ... / Später ... / Wenn mir ein Wort fehlt, beschreibe ich es anders.",DAILY_LIFE,HIGH,HARD,HIGH

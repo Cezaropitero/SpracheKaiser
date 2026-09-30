@@ -5,7 +5,7 @@ public class Challenge {
     private String challenge;
     private String help;
     private String theme;
-    private String applicability;
+    private String Accessibility;
     private String difficulty;
     private String engagement;
 
@@ -20,7 +20,7 @@ public class Challenge {
         this.challenge = challenge;
         this.help = help;
         this.theme = theme;
-        this.applicability = applicability;
+        this.Accessibility = applicability;
         this.difficulty = difficulty;
         this.engagement = engagement;
     }
@@ -37,8 +37,8 @@ public class Challenge {
         return theme;
     }
 
-    public String getApplicability() {
-        return applicability;
+    public String getAccessibility() {
+        return Accessibility;
     }
 
     public String getDifficulty() {

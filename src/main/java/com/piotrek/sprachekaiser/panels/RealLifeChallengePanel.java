@@ -1,6 +1,7 @@
 package com.piotrek.sprachekaiser.panels;
 
 import com.piotrek.sprachekaiser.models.Challenge;
+import com.piotrek.sprachekaiser.models.ChallengeFilter;
 import com.piotrek.sprachekaiser.services.ChallengeService;
 
 import javax.swing.*;
@@ -8,6 +9,7 @@ import java.awt.*;
 
 public class RealLifeChallengePanel extends JPanel {
 
+    private JButton backToFilterButton;
     private JLabel challengeLabel;
     private ChallengeService challengeService = new ChallengeService();
     private JButton helpButton;
@@ -19,28 +21,23 @@ public class RealLifeChallengePanel extends JPanel {
     private Challenge currentChallenge;
     private JLabel helpLabel;
 
+    private ChallengeFilter currentFilter;
 
-    public RealLifeChallengePanel(Runnable backToMenuAction) {
 
-        // CONFIGURE PANEL
-        currentChallenge = challengeService.getRandomChallenge();
-
+    public RealLifeChallengePanel(Runnable backToFilterAction,
+                                  Runnable backToMenuAction)
+    {
         setLayout(
                 new BoxLayout(this, BoxLayout.Y_AXIS)
         );
 
         setBackground(
-                new Color(250, 248, 240)
+                new Color(240, 234, 218)
         );
 
 
         // CREATE COMPONENTS
-
-        challengeLabel = new JLabel(
-                "<html><div style='width:350px; text-align:center;'>"
-                        + currentChallenge.getChallenge()
-                        + "</div></html>"
-        );
+        challengeLabel = new JLabel("");
 
         challengeLabel.setFont(
                 new Font("Arial", Font.BOLD, 22)
@@ -56,6 +53,9 @@ public class RealLifeChallengePanel extends JPanel {
         nextChallengeButton =
                 createButton("Next Challenge");
 
+        backToFilterButton =
+                createButton("Back to Filters");
+
         backToMenuButton =
                 createButton("Back to Menu");
 
@@ -67,7 +67,10 @@ public class RealLifeChallengePanel extends JPanel {
 
         // CONFIGURE ACTIONS
 
-        configureActions(backToMenuAction);
+        configureActions(
+                backToFilterAction,
+                backToMenuAction
+        );
 
         // ADD COMPONENTS
 
@@ -83,14 +86,26 @@ public class RealLifeChallengePanel extends JPanel {
 
         add(helpPanel);
 
-    //    add(Box.createVerticalStrut(10));
+        add(Box.createVerticalStrut(10));
 
         add(nextChallengeButton);
 
         add(Box.createVerticalStrut(10));
 
+        add(backToFilterButton);
+
+        add(Box.createVerticalStrut(10));
+
         add(backToMenuButton);
     }
+
+
+    public void setFilter(ChallengeFilter filter) {
+        this.currentFilter = filter;
+        showRandomChallenge();
+    }
+
+
 
     private JPanel createHelpPanel() {
 
@@ -101,40 +116,37 @@ public class RealLifeChallengePanel extends JPanel {
         );
 
         panel.setBackground(
-                new Color(250, 248, 240)
+                new Color(255, 253, 247)
         );
 
-        // CENTER THE WHOLE HELP BLOCK
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         Dimension helpSize = new Dimension(300, 100);
+
         panel.setPreferredSize(helpSize);
+        panel.setMinimumSize(helpSize);
         panel.setMaximumSize(helpSize);
 
-
-        // TITLE
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(
+                                new Color(210, 201, 180)
+                        ),
+                        BorderFactory.createEmptyBorder(
+                                10, 12, 10, 12
+                        )
+                )
+        );
 
         JLabel helpTitle = new JLabel("Useful phrases:");
 
         helpTitle.setFont(
                 new Font("Arial", Font.BOLD, 12)
         );
-
-
-        // HELP
-
-        helpLabel = new JLabel(
-                formatHelp(currentChallenge.getHelp())
-        );
-
-
-        // TEXT INSIDE THE BLOCK → LEFT
+        helpLabel = new JLabel("");
 
         helpTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
         helpLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-
-        // ADD COMPONENTS
 
         panel.add(helpTitle);
         panel.add(Box.createVerticalStrut(3));
@@ -157,23 +169,53 @@ public class RealLifeChallengePanel extends JPanel {
 
         JButton button = new JButton(text);
 
-        button.setAlignmentX(
-                Component.CENTER_ALIGNMENT
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setFocusPainted(false);
+
+        Dimension size = new Dimension(280, 52);
+
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
+        button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+
+        button.setBackground(
+                new Color(255, 253, 247)
         );
 
-        button.setFocusPainted(false);
+        button.setForeground(
+                new Color(37, 37, 37)
+        );
+
+        button.setBorder(
+                BorderFactory.createLineBorder(
+                        new Color(185, 135, 45)
+                )
+        );
+
+        button.setFont(
+                new Font("Arial", Font.BOLD, 15)
+        );
 
         return button;
     }
 
 
     private void configureActions(
+            Runnable backToFilterAction,
             Runnable backToMenuAction
     ) {
+
+        backToFilterButton.addActionListener(e ->
+                backToFilterAction.run()
+        );
 
         backToMenuButton.addActionListener(e ->
                 backToMenuAction.run()
         );
+
         helpButton.addActionListener(e -> {
 
             boolean isVisible = helpPanel.isVisible();
@@ -186,15 +228,16 @@ public class RealLifeChallengePanel extends JPanel {
                 helpButton.setText("Hide Help");
             }
         });
-        nextChallengeButton.addActionListener(e -> {
-            showRandomChallenge();
-        });
 
+        nextChallengeButton.addActionListener(e ->
+                showRandomChallenge()
+        );
     }
 
     private void showRandomChallenge() {
 
-        currentChallenge = challengeService.getRandomChallenge();
+        currentChallenge =
+                challengeService.getRandomChallenge(currentFilter);
 
         challengeLabel.setText(
                 "<html><div style='width:350px; text-align:center;'>"
@@ -206,7 +249,6 @@ public class RealLifeChallengePanel extends JPanel {
                 formatHelp(currentChallenge.getHelp())
         );
 
-        // Schowaj help przy nowym challenge
         helpPanel.setVisible(false);
         helpButton.setText("Get Help");
     }

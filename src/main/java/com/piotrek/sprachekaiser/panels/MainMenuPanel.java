@@ -11,7 +11,7 @@ public class MainMenuPanel extends JPanel {
     ) {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(250, 248, 240));
+        setBackground(new Color(240, 234, 218));
 
         JLabel titleLabel = new JLabel("SpracheKaiser");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 28));
@@ -78,8 +78,25 @@ public class MainMenuPanel extends JPanel {
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.setFocusPainted(false);
 
-        Dimension size = new Dimension(160, 30);
+        Dimension size = new Dimension(280, 52);
+        button.setPreferredSize(size);
+        button.setMinimumSize(size);
         button.setMaximumSize(size);
+
+        button.setContentAreaFilled(false);
+        button.setOpaque(true);
+        button.setBackground(new Color(255, 253, 247));
+
+        button.setBorder(BorderFactory.createLineBorder(
+                new Color(210, 201, 180)
+        ));
+        button.setForeground(new Color(37, 37, 37));
+
+        button.setBorder(BorderFactory.createLineBorder(
+                new Color(185, 135, 45)
+        ));
+
+        button.setFont(new Font("Arial", Font.BOLD, 15));
 
         return button;
     }

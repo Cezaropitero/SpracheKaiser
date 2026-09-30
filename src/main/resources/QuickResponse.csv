@@ -1,0 +1,37 @@
+situation,help,difficulty,exampleAnswer,Theme
+You are at a bakery. Buy two loaves of bread.,ich hätte gern + zwei Brote,EASY,"Ich hätte gern zwei Brote, bitte.",SHOPPING
+You are at a café. Order a coffee with milk.,ein Kaffee + mit Milch,EASY,"Einen Kaffee mit Milch, bitte.",FOOD
+You are in a shop. Ask how much an apple costs.,wie viel + kosten,EASY,Wie viel kostet ein Apfel?,SHOPPING
+You want to pay by card.,mit Karte + bezahlen,EASY,Kann ich mit Karte bezahlen?,SHOPPING
+You are looking for the restroom. Ask where it is.,wo + die Toilette,EASY,Wo ist die Toilette?,DAILY_LIFE
+Someone asks where you are from. Say that you are from Poland.,kommen + aus Polen,EASY,Ich komme aus Polen.,SOCIAL
+You did not understand the other person. Ask them to repeat it.,wiederholen + bitte,EASY,Können Sie das bitte wiederholen?,SOCIAL
+You are in a shop. Buy a bottle of water.,eine Flasche Wasser,EASY,Ich hätte gern eine Flasche Wasser.,SHOPPING
+Ask a friend if they have time today.,heute + Zeit haben,EASY,Hast du heute Zeit?,SOCIAL
+Ask what time the bus leaves.,wann + abfahren,EASY,Wann fährt der Bus ab?,TRAVEL
+You do not know where the train station is. Ask a passerby.,wo + der Bahnhof,EASY,"Entschuldigung, wo ist der Bahnhof?",TRAVEL
+Say that you are learning German.,Deutsch + lernen,EASY,Ich lerne Deutsch.,DAILY_LIFE
+You are late for a meeting. Apologize and explain that the bus was delayed.,Entschuldigung + der Bus + Verspätung,MEDIUM,"Entschuldigung, ich bin zu spät. Der Bus hatte Verspätung.",DAILY_LIFE
+"At a restaurant, ask for the bill and whether you can pay by card.",die Rechnung + mit Karte,MEDIUM,"Die Rechnung, bitte. Kann ich mit Karte bezahlen?",FOOD
+Ask a shop assistant if they have this shirt in a larger size.,das Hemd + eine Nummer größer,MEDIUM,Haben Sie dieses Hemd eine Nummer größer?,SHOPPING
+Describe what you did yesterday: you bought groceries and cooked lunch.,"Perfekt: einkaufen, kochen",MEDIUM,Gestern habe ich Lebensmittel eingekauft und Mittagessen gekocht.,DAILY_LIFE
+You cannot meet on Saturday. Suggest Sunday instead.,nicht können + stattdessen + Sonntag,MEDIUM,Am Samstag kann ich nicht. Hast du stattdessen am Sonntag Zeit?,SOCIAL
+Your train has not arrived. Ask a staff member if it is delayed.,der Zug + Verspätung haben,MEDIUM,"Entschuldigung, hat der Zug Verspätung?",TRAVEL
+Ask someone to show you the way to the pharmacy.,der Weg + zur Apotheke,MEDIUM,Können Sie mir den Weg zur Apotheke zeigen?,DAILY_LIFE
+"In a shop, ask if you can try on the jacket.",die Jacke + anprobieren,MEDIUM,Kann ich diese Jacke anprobieren?,SHOPPING
+Invite a friend for coffee after work.,nach der Arbeit + Kaffee trinken,MEDIUM,Möchtest du nach der Arbeit mit mir einen Kaffee trinken?,SOCIAL
+Say that you do not eat meat and ask if there is a vegetarian dish.,kein Fleisch + vegetarisches Gericht,MEDIUM,Ich esse kein Fleisch. Haben Sie ein vegetarisches Gericht?,FOOD
+Ask if you can leave your luggage here for an hour.,mein Gepäck + für eine Stunde + lassen,MEDIUM,Kann ich mein Gepäck für eine Stunde hier lassen?,TRAVEL
+Say that you are working on a Java project and need help.,an einem Projekt arbeiten + Hilfe brauchen,MEDIUM,Ich arbeite an einem Java-Projekt und brauche Hilfe.,WORK
+Ask someone to speak more slowly because you are still learning German.,langsamer sprechen + weil,HARD,"Könnten Sie bitte etwas langsamer sprechen, weil ich noch Deutsch lerne?",SOCIAL
+"Explain that you cannot come today because you are ill, but you are free tomorrow.",weil + krank; aber + morgen,HARD,"Ich kann heute nicht kommen, weil ich krank bin, aber morgen habe ich Zeit.",DAILY_LIFE
+"In a job interview, explain why you are learning Java.",weil + entwickeln möchten,HARD,"Ich lerne Java, weil ich gern Anwendungen entwickeln möchte.",WORK
+Suggest going for a walk with a friend if the weather is nice tomorrow.,wenn + das Wetter schön sein,HARD,"Wenn das Wetter morgen schön ist, können wir spazieren gehen.",SOCIAL
+Reschedule an appointment: the current time does not suit you. Ask for another time.,der Termin + nicht passen + anderer Termin,HARD,Der Termin passt mir leider nicht. Wäre ein anderer Termin möglich?,DAILY_LIFE
+Say that you went to the mountains at the weekend and had fun even though it rained.,Perfekt + obwohl,HARD,"Am Wochenende war ich in den Bergen. Obwohl es geregnet hat, hatte ich viel Spaß.",TRAVEL
+"At a restaurant, explain that you ordered soup but received a salad.",bestellt + bekommen + aber,HARD,"Entschuldigung, ich habe eine Suppe bestellt, aber einen Salat bekommen.",FOOD
+Ask a friend to recommend a book that will help you practise German.,empfehlen + ein Buch + mit dem,HARD,"Kannst du mir ein Buch empfehlen, mit dem ich Deutsch üben kann?",SOCIAL
+Say that you lost your phone and ask if anyone has found it.,verloren + gefunden,HARD,Ich habe mein Handy verloren. Hat es vielleicht jemand gefunden?,DAILY_LIFE
+"At work, ask for one more day to finish a task because you encountered a bug.",einen Tag mehr + weil + Fehler,HARD,"Könnte ich einen Tag mehr für die Aufgabe bekommen, weil ich auf einen Fehler gestoßen bin?",WORK
+Say that you would be happy to join if the meeting starts after 5 p.m.,gern dabei sein + wenn + nach 17 Uhr,HARD,"Ich wäre gern dabei, wenn das Treffen nach 17 Uhr beginnt.",SOCIAL
+"At a hotel, ask if you can check out later because your train leaves in the evening.",später auschecken + weil + am Abend,HARD,"Könnte ich später auschecken, weil mein Zug erst am Abend abfährt?",TRAVEL
