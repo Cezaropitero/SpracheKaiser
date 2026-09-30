@@ -1,0 +1,101 @@
+German Question,English Meaning,German Help,Level,Theme
+Wie heißt du?,What is your name?,Ich heiße ... | Mein Name ist ...,A1,PERSONAL
+Wie geht es dir?,How are you?,Mir geht es gut. | Ich bin heute ... | Ich fühle mich ...,A1,PERSONAL
+Woher kommst du?,Where are you from?,Ich komme aus ... | Ich bin in ... geboren.,A1,PERSONAL
+Wo wohnst du?,Where do you live?,Ich wohne in ... | Ich wohne seit ... in ...,A1,PERSONAL
+Wie alt bist du?,How old are you?,Ich bin ... Jahre alt.,A1,PERSONAL
+Was machst du beruflich?,What do you do for a living?,Ich arbeite als ... | Zurzeit arbeite ich als ...,A1,WORK
+Was studierst du?,What do you study?,Ich studiere ... | Mein Studienfach ist ...,A1,PERSONAL
+Welche Sprachen sprichst du?,Which languages do you speak?,"Ich spreche Polnisch, Englisch und ein bisschen Deutsch. | Am besten spreche ich ...",A1,PERSONAL
+Warum lernst du Deutsch?,Why are you learning German?,"Ich lerne Deutsch, weil ... | Deutsch ist für mich wichtig, weil ...",A2,PERSONAL
+Seit wann lernst du Deutsch?,How long have you been learning German?,Ich lerne seit ... Deutsch. | Ich lerne Deutsch seit ... Monaten/Jahren.,A2,PERSONAL
+Was machst du heute?,What are you doing today?,Heute ... ich. | Später möchte ich ...,A1,DAILY_LIFE
+Was hast du gestern gemacht?,What did you do yesterday?,Gestern habe ich ... | Danach habe ich ... | Am Abend ...,A2,DAILY_LIFE
+Was machst du morgen?,What are you doing tomorrow?,Morgen werde ich ... | Morgen möchte ich ...,A1,DAILY_LIFE
+Was machst du normalerweise am Wochenende?,What do you normally do at the weekend?,Am Wochenende ... ich normalerweise. | Oft ... ich auch ...,A2,DAILY_LIFE
+Was hast du letztes Wochenende gemacht?,What did you do last weekend?,Letztes Wochenende habe ich ... | Am Samstag ... | Am Sonntag ...,A2,DAILY_LIFE
+Was möchtest du nächstes Wochenende machen?,What would you like to do next weekend?,Nächstes Wochenende möchte ich ... | Vielleicht werde ich ...,A2,DAILY_LIFE
+Wann stehst du normalerweise auf?,What time do you normally get up?,Normalerweise stehe ich um ... Uhr auf. | Am Wochenende stehe ich später auf.,A1,DAILY_LIFE
+Was machst du morgens?,What do you do in the morning?,Morgens stehe ich auf und ... | Danach ...,A1,DAILY_LIFE
+Wann gehst du normalerweise schlafen?,What time do you normally go to sleep?,"Normalerweise gehe ich um ... Uhr schlafen. | Wenn ich müde bin, gehe ich früher ins Bett.",A1,DAILY_LIFE
+Wie sieht dein typischer Tag aus?,What does your typical day look like?,Zuerst ... | Danach ... | Am Nachmittag ... | Abends ...,A2,DAILY_LIFE
+Was machst du in deiner Freizeit?,What do you do in your free time?,In meiner Freizeit ... ich gern. | Ich interessiere mich für ...,A1,HOBBIES
+Was sind deine Hobbys?,What are your hobbies?,Meine Hobbys sind ... | Besonders gern ... ich.,A1,HOBBIES
+Treibst du Sport?,Do you do any sports?,"Ja, ich treibe ... | Nein, aber ich möchte ...",A1,HOBBIES
+Welche Sportarten magst du?,Which sports do you like?,Ich mag ... besonders gern. | Mein Lieblingssport ist ...,A1,HOBBIES
+Wie oft gehst du ins Fitnessstudio?,How often do you go to the gym?,Ich gehe ... Mal pro Woche ins Fitnessstudio. | Zurzeit gehe ich ...,A1,HOBBIES
+"Was machst du, um dich zu entspannen?",What do you do to relax?,"Um mich zu entspannen, ... ich. | Ich höre Musik / gehe spazieren / ...",A2,HOBBIES
+Was machst du gern mit deinen Freunden?,What do you like doing with your friends?,Mit meinen Freunden ... ich gern. | Wir gehen oft ...,A2,HOBBIES
+Liest du gern?,Do you like reading?,"Ja, ich lese gern. | Am liebsten lese ich ...",A1,HOBBIES
+Welche Musik hörst du gern?,What kind of music do you like listening to?,Ich höre gern ... | Mein Lieblingsgenre ist ...,A1,HOBBIES
+Welche Filme oder Serien magst du?,Which films or series do you like?,Ich mag ... | Zurzeit schaue ich ...,A1,HOBBIES
+Was ist dein Lieblingsfilm?,What is your favourite film?,"Mein Lieblingsfilm ist ... | Ich mag ihn, weil ...",A1,HOBBIES
+Was ist dein Lieblingsessen?,What is your favourite food?,Mein Lieblingsessen ist ... | Besonders gern esse ich ...,A1,FOOD
+Kochst du gern?,Do you like cooking?,"Ja, ich koche gern. | Ich koche meistens ...",A1,FOOD
+Was kannst du gut kochen?,What can you cook well?,Ich kann ... gut kochen. | Besonders gut kann ich ...,A1,FOOD
+Was isst du normalerweise zum Frühstück?,What do you normally eat for breakfast?,Zum Frühstück esse ich normalerweise ... | Dazu trinke ich ...,A1,FOOD
+Trinkst du lieber Kaffee oder Tee?,Do you prefer coffee or tea?,Ich trinke lieber ... als ... | Am Morgen trinke ich meistens ...,A1,FOOD
+Was kaufst du oft im Supermarkt?,What do you often buy at the supermarket?,Im Supermarkt kaufe ich oft ... | Normalerweise brauche ich ...,A1,DAILY_LIFE
+Wie oft gehst du einkaufen?,How often do you go shopping?,Ich gehe ... Mal pro Woche einkaufen. | Meistens gehe ich ...,A1,DAILY_LIFE
+Was hast du zuletzt gekauft?,What did you buy most recently?,"Zuletzt habe ich ... gekauft. | Das habe ich gekauft, weil ...",A2,DAILY_LIFE
+Isst du lieber zu Hause oder im Restaurant?,Do you prefer eating at home or in a restaurant?,"Ich esse lieber zu Hause, weil ... | Im Restaurant esse ich gern, wenn ...",A2,FOOD
+Wo wohnst du?,Where do you live?,Ich wohne in ... | Meine Wohnung liegt in ...,A1,PERSONAL
+Wohnst du allein?,Do you live alone?,"Ja, ich wohne allein. | Nein, ich wohne mit ... zusammen.",A1,HOME
+Wie sieht deine Wohnung aus?,What does your apartment look like?,Meine Wohnung ist ... | Sie hat ... Zimmer. | Es gibt ...,A2,HOME
+Welches Zimmer magst du am liebsten?,Which room do you like the most?,Am liebsten mag ich ... | Dort kann ich ...,A2,HOME
+Was machst du normalerweise zu Hause?,What do you normally do at home?,Zu Hause ... ich normalerweise. | Oft ... ich auch ...,A2,HOME
+Wie oft räumst du deine Wohnung auf?,How often do you tidy your apartment?,Ich räume meine Wohnung ... auf. | Normalerweise mache ich das ...,A2,HOME
+Welche Haushaltsarbeit magst du nicht?,Which household chore do you dislike?,Ich mag ... nicht. | Am wenigsten mag ich ...,A2,HOME
+Hast du Pflanzen zu Hause?,Do you have plants at home?,"Ja, ich habe ... Pflanzen. | Ich kümmere mich um ...",A1,HOME
+Hast du ein Haustier?,Do you have a pet?,"Ja, ich habe einen/eine ... | Nein, aber ich hätte gern ...",A1,HOME
+Möchtest du später ein Haus oder eine Wohnung haben?,Would you like to have a house or an apartment in the future?,Später möchte ich lieber ... haben. | Ich würde gern ... wohnen.,A2,HOME
+Wie kommst du normalerweise zur Arbeit?,How do you normally get to work?,Normalerweise fahre/gehe ich mit ... zur Arbeit. | Ich brauche ungefähr ... Minuten.,A2,DAILY_LIFE
+Fährst du oft mit dem Auto?,Do you often drive?,"Ja, ich fahre oft mit dem Auto. | Nein, meistens benutze ich ...",A1,DAILY_LIFE
+Benutzt du öffentliche Verkehrsmittel?,Do you use public transport?,"Ja, ich benutze oft ... | Meistens fahre ich mit ...",A1,DAILY_LIFE
+Wie lange brauchst du zur Arbeit?,How long does it take you to get to work?,Ich brauche ungefähr ... Minuten zur Arbeit. | Der Weg dauert ...,A1,DAILY_LIFE
+Fährst du gern Fahrrad?,Do you like cycling?,"Ja, ich fahre gern Fahrrad. | Ich fahre besonders gern ...",A1,DAILY_LIFE
+Wohin möchtest du reisen?,Where would you like to travel?,Ich möchte gern nach ... reisen. | Dort möchte ich ...,A2,TRAVEL
+In welchen Ländern warst du schon?,Which countries have you already visited?,Ich war schon in ... | Letztes Jahr war ich in ...,A2,TRAVEL
+Was war deine schönste Reise?,What was your best trip?,Meine schönste Reise war nach ... | Besonders schön war ...,B1,TRAVEL
+Reist du lieber allein oder mit anderen?,Do you prefer travelling alone or with other people?,"Ich reise lieber ... | Das gefällt mir besser, weil ...",B1,TRAVEL
+Was nimmst du normalerweise auf eine Reise mit?,What do you normally take with you on a trip?,Ich nehme normalerweise ... mit. | Wichtig sind für mich ...,A2,TRAVEL
+Was machst du beruflich?,What do you do for a living?,Ich arbeite als ... | Zurzeit bin ich ...,A1,WORK
+Was gefällt dir an deiner Arbeit?,What do you like about your job?,An meiner Arbeit gefällt mir ... | Besonders interessant finde ich ...,B1,WORK
+Was möchtest du beruflich in Zukunft machen?,What would you like to do professionally in the future?,In Zukunft möchte ich als ... arbeiten. | Ich würde gern ...,B1,WORK
+Arbeitest du lieber allein oder im Team?,Do you prefer working alone or in a team?,"Ich arbeite lieber ... | Im Team finde ich gut, dass ...",B1,WORK
+Was ist dir bei der Arbeit wichtig?,What is important to you at work?,Bei der Arbeit sind mir ... wichtig. | Besonders wichtig ist für mich ...,B1,WORK
+Welche Fähigkeiten möchtest du verbessern?,Which skills would you like to improve?,Ich möchte ... verbessern. | Ich möchte besser ... können.,B1,WORK
+Arbeitest du lieber von zu Hause oder im Büro?,Do you prefer working from home or in the office?,Ich arbeite lieber ... | Zu Hause kann ich ... | Im Büro kann ich ...,B1,WORK
+Wie sieht ein guter Arbeitstag für dich aus?,What does a good working day look like for you?,Ein guter Arbeitstag beginnt mit ... | Ich möchte ... und ...,B1,WORK
+Was möchtest du noch lernen?,What else would you like to learn?,Ich möchte noch ... lernen. | Besonders interessiert mich ...,A2,WORK
+Welche Arbeit würdest du niemals machen?,What job would you never do?,"Ich würde niemals als ... arbeiten. | Das wäre nichts für mich, weil ...",B1,WORK
+Wie oft benutzt du deinen Computer?,How often do you use your computer?,Ich benutze meinen Computer jeden Tag. | Normalerweise benutze ich ihn für ...,A1,TECHNOLOGY
+Wofür benutzt du dein Handy?,What do you use your phone for?,Ich benutze mein Handy für ... | Am häufigsten ...,A1,TECHNOLOGY
+Welche Apps benutzt du am häufigsten?,Which apps do you use most often?,"Am häufigsten benutze ich ... | Diese App benutze ich, weil ...",A1,TECHNOLOGY
+Wie viel Zeit verbringst du im Internet?,How much time do you spend on the internet?,Ich verbringe ungefähr ... Stunden pro Tag im Internet. | Meistens ...,A2,TECHNOLOGY
+Kaufst du manchmal online ein?,Do you sometimes shop online?,"Ja, manchmal kaufe ich online ein. | Online kaufe ich meistens ...",A1,TECHNOLOGY
+Welche sozialen Medien benutzt du?,Which social media do you use?,Ich benutze ... | Am häufigsten benutze ich ...,A1,TECHNOLOGY
+Könntest du eine Woche ohne Handy leben?,Could you live for a week without your phone?,"Ja, ich könnte eine Woche ohne Handy leben, weil ... | Nein, weil ...",B1,TECHNOLOGY
+"Was machst du, wenn dein Computer nicht funktioniert?",What do you do when your computer does not work?,"Wenn mein Computer nicht funktioniert, ... | Zuerst überprüfe ich ... | Dann ...",B1,TECHNOLOGY
+Welche Technologie findest du interessant?,Which technology do you find interesting?,Ich finde ... interessant. | Besonders spannend finde ich ...,B1,TECHNOLOGY
+Was möchtest du mit dem Computer besser können?,What would you like to be better at doing on a computer?,"Ich möchte besser ... können. | Zum Beispiel möchte ich lernen, wie man ...",B1,TECHNOLOGY
+Was macht dich glücklich?,What makes you happy?,"... macht mich glücklich. | Ich bin glücklich, wenn ...",B1,EMOTIONS
+Was macht dich manchmal nervös?,What sometimes makes you nervous?,"... macht mich manchmal nervös. | Ich werde nervös, wenn ...",B1,EMOTIONS
+"Was machst du, wenn du müde bist?",What do you do when you are tired?,"Wenn ich müde bin, ... | Dann brauche ich ...",A1,EMOTIONS
+"Was machst du, wenn du schlechte Laune hast?",What do you do when you are in a bad mood?,"Wenn ich schlechte Laune habe, ... | Dann hilft mir ...",B1,EMOTIONS
+Worauf freust du dich?,What are you looking forward to?,"Ich freue mich auf ... | Besonders freue ich mich darauf, ...",B1,EMOTIONS
+Wovor hast du Angst?,What are you afraid of?,"Ich habe Angst vor ... | Ein bisschen Angst habe ich, wenn ...",B1,EMOTIONS
+Was ist dir im Leben wichtig?,What is important to you in life?,Im Leben sind mir ... wichtig. | Besonders wichtig ist für mich ...,B1,EMOTIONS
+Was möchtest du in deinem Leben erreichen?,What would you like to achieve in your life?,"Ich möchte ... erreichen. | Mein Ziel ist es, ...",B1,EMOTIONS
+Welche Gewohnheit möchtest du ändern?,Which habit would you like to change?,"Ich möchte die Gewohnheit ändern, ... | Ich möchte weniger/mehr ...",B1,EMOTIONS
+Was würdest du gern besser können?,What would you like to be better at?,Ich würde gern besser ... können. | Deshalb möchte ich ... üben.,B1,EMOTIONS
+"Was würdest du machen, wenn du eine Million Euro hättest?",What would you do if you had one million euros?,"Wenn ich eine Million Euro hätte, würde ich ... | Außerdem würde ich ...",B1,FUTURE
+Wo würdest du gern leben?,Where would you like to live?,Ich würde gern in ... leben. | Dort gefällt mir ...,B1,FUTURE
+Welche Person möchtest du einmal treffen?,Which person would you like to meet one day?,"Ich möchte einmal ... treffen. | Ich würde diese Person gern fragen, ...",B1,FUTURE
+"Wenn du morgen frei hättest, was würdest du machen?","If you had tomorrow off, what would you do?","Wenn ich morgen frei hätte, würde ich ... | Vielleicht würde ich auch ...",B1,FUTURE
+Was würdest du gern einmal ausprobieren?,What would you like to try one day?,"Ich würde gern einmal ... ausprobieren. | Das interessiert mich, weil ...",B1,FUTURE
+Was war die beste Entscheidung deines Lebens?,What was the best decision of your life?,"Die beste Entscheidung meines Lebens war ... | Sie war gut, weil ...",B1,FUTURE
+Was hast du in letzter Zeit gelernt?,What have you learned recently?,In letzter Zeit habe ich ... gelernt. | Jetzt kann ich ... besser.,B1,FUTURE
+Was möchtest du dieses Jahr noch machen?,What would you still like to do this year?,Dieses Jahr möchte ich noch ... | Außerdem würde ich gern ...,B1,FUTURE
+Wie stellst du dir dein Leben in fünf Jahren vor?,How do you imagine your life in five years?,"In fünf Jahren möchte ich ... | Ich hoffe, dass ich ... | Vielleicht werde ich ...",B1,FUTURE
+Was möchtest du unbedingt einmal erleben?,What is something you definitely want to experience one day?,"Ich möchte unbedingt einmal ... erleben. | Das wäre für mich besonders, weil ...",B1,FUTURE
